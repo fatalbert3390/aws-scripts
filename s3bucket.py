@@ -4,4 +4,7 @@
 
 import boto3
 
-s3.create_bucket(Bucket='mybucket')
+s3 = boto3.client('s3')
+l = open('testbucketlist.txt')
+
+s3.create_bucket(Bucket='%' % l.readline())

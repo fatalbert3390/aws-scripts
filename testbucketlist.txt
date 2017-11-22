@@ -1,3 +1,1 @@
-testbucket1
-testbucket2
-testbucket3
+alexstn-testbucket1.com

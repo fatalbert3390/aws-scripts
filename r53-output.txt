@@ -1,0 +1,15 @@
+{u'HostedZones': 
+    [
+        {
+            u'ResourceRecordSetCount': 4, 
+	    u'CallerReference': 'RISWorkflow-RD:b4d973a8-ad98-4882-b04c-78f20050a7b3', 
+	    u'Config': 
+		{
+		    u'Comment': 'HostedZone created by Route53 Registrar', 
+		    u'PrivateZone': False
+		}, 
+	    u'Id': '/hostedzone/ZJ50IDU48RG9U', 
+	    u'Name': 'tellpotbelly.com.'
+	}
+    ]
+}

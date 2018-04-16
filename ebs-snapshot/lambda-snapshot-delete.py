@@ -5,37 +5,31 @@ from botocore.exceptions import ClientError
 
 from datetime import datetime,timedelta
 
-#def delete_snapshot(snapshot_id):
-#    print "Deleting snapshot %s " % (snapshot_id)
-#    try:  
-#        ec2resource = boto3.resource('ec2')
-#        snapshot = ec2resource.Snapshot(snapshot_id)
-#        snapshot.delete()
-#    except ClientError as e:
-#        print "Caught exception: %s" % e
+def delete_snapshot(snapshot_id):
+    print "Deleting snapshot %s " % (snapshot_id)
+    try:  
+        ec2resource = boto3.resource('ec2')
+        snapshot = ec2resource.Snapshot(snapshot_id)
+        snapshot.delete()
+    except ClientError as e:
+        print "Caught exception: %s" % e
         
-#    return
+    return
     
 def lambda_handler(event, context):
     
     # Get current timestamp in UTC
     now = datetime.now()
 
-	# AWS Account ID    
-	account_id = '041619730184'
-    
     # Define retention period in days
     retention_days = 7
     
     # Create EC2 client
     ec2 = boto3.client('ec2')
     
-    # Filtering by snapshot timestamp comparison is not supported
-    # grab all snapshots for specified instances:
+    # grab all snapshots for specified volumes:
     result = ec2.describe_snapshots( VolumeIds=[
-	'vol-06edc3097410fe5d4', # Triton C (TESTING)
-        #'vol-00bcbc49', # Adonis D
-        #'vol-b7f5e8fb', # Athena D
+	'vol-############', 
 	]
     )
     

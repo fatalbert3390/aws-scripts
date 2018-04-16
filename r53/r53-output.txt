@@ -8,8 +8,8 @@
 		    u'Comment': 'HostedZone created by Route53 Registrar', 
 		    u'PrivateZone': False
 		}, 
-	    u'Id': '/hostedzone/ZJ50IDU48RG9U', 
-	    u'Name': 'tellpotbelly.com.'
+	    u'Id': '/hostedzone/ZJ##########', 
+	    u'Name': 'domain.com.'
 	}
     ]
 }

@@ -8,7 +8,7 @@ s3 = boto3.client('s3')
 
 web_config = {
     'RedirectAllRequestsTo': {
-	'HostName': 'second-to-none.com',
+	'HostName': 'domain.com',
 	'Protocol': 'http',
     },
 }
@@ -21,3 +21,4 @@ with open('testbucketlist.txt') as in_file:
         s3.put_bucket_website(
             Bucket=bucket,
             WebsiteConfiguration=web_config
+        )

@@ -1,21 +1,32 @@
 import boto3
+import re
 
 client = boto3.client("route53")
 
-zones_output = client.list_hosted_zones()
+# json would be your reponse to play with
+json = client.list_hosted_zones()
 
-# 's' is the string you're trying to parse. 
+# hosted_zones is just well...your hosted zones
+hosted_zones = json['HostedZones']
+
+regexp = re.compile("/hostedzone/(.*)$")
+zone_ids = []
+
+for hosted_zone in hosted_zones:
+	zone_ids.append(regexp.search(hosted_zone['Id']).group(1))
+
+print(zone_ids) # this should have all that you need :)
+
+# 's' is the string you're trying to parse.
 # 'first' is the beginning character
 # 'last' is the end character
 
-def find_between(s, first, last):
-    try:
-        start = s.index(first) + len(first)
-        end = s.index(last, start)
-        return s[start:end]
-    except ValueError:
-        return ""
+#def find_between(s, first, last):
+#    try:
+#        start = s.index(first) + len(first)
+#        end = s.index(last, start)
+#        return s[start:end]
+#    except ValueError:
+#        return ""
 
-print find_between(str(zones_output), "e/", "',")
-
-
+#print find_between(str(zones_output), "e/", "',")

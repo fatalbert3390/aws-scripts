@@ -12,4 +12,6 @@ hosted_zones = json['HostedZones']
 regexp = re.compile("/hostedzone/(.*)$")
 
 for hosted_zone in hosted_zones:
-	print(regexp.search(hosted_zone['Id']).group(1))
+    client.list_resource_record_sets(HostedZoneId=(
+	    (regexp.search(hosted_zone['Id']).group(1))
+	)

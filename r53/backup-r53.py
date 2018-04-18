@@ -10,12 +10,13 @@ json = client.list_hosted_zones()
 hosted_zones = json['HostedZones']
 
 regexp = re.compile("/hostedzone/(.*)$")
-zone_ids = []
+#zone_ids = []
 
 for hosted_zone in hosted_zones:
-	zone_ids.append(regexp.search(hosted_zone['Id']).group(1))
+	#zone_ids.append
+	print(regexp.search(hosted_zone['Id']).group(1))
 
-print(zone_ids) # this should have all that you need :)
+#print(zone_ids) # this should have all that you need :)
 
 # 's' is the string you're trying to parse.
 # 'first' is the beginning character

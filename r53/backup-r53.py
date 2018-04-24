@@ -17,8 +17,8 @@ regexp = re.compile("/hostedzone/(.*)$")
 for hosted_zone in hosted_zones:
     zone_id = regexp.search(hosted_zone['Id']).group(1)
     backup_json = r53_client.list_resource_record_sets(HostedZoneId=zone_id)
-    #s3_client.put_object(
-    #    Body=b'%s' % (backup_json),
-    #    Bucket='alex-stn-testing',
-    #    Key='r53backup ' + timestamp
-    #)
+    s3_client.put_object(
+        Body=b'{}'.format(backup_json),
+        Bucket='alex-stn-testing',
+        Key='r53backup ' + timestamp
+    )

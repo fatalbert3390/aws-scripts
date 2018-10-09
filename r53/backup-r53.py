@@ -23,7 +23,7 @@ def lambda_handler(event, context):
         r53_backup.append(r53_client.list_resource_record_sets(HostedZoneId=zone_id))
         s3_client.put_object(
             Body=(json.dumps(r53_backup, indent=4, sort_keys=False)),
-            Bucket='alex-stn-testing',
+            Bucket='[BUCKET NAME]',
             Key='r53backup ' + timestamp
         )
     #print(json.dumps(r53_backup, indent=4, sort_keys=False))

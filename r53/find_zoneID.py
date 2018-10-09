@@ -4,7 +4,7 @@
 # 'last' is the end character
 
 
-test_str = "u'Id': '/hostedzone/ZJ50IDU48RG9U',"
+test_str = "u'Id': '/hostedzone/[ZJ########]',"
 
 def find_between(s, first, last):
     try:

@@ -6,10 +6,10 @@ elb = boto3.client('elb')
 
 def lambda_handler(event, context):
     elb.register_instances_with_load_balancer(
-            LoadBalancerName='elb',
+            LoadBalancerName='[ELB NAME]',
             Instances=[
                 {
-                    'InstanceId': 'i-043fb34130a892840'
+                    'InstanceId': 'i-########'
                 },
            ]
     )

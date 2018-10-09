@@ -6,10 +6,10 @@ def lambda_handler(event, context):
     elb = boto3.client('elb')
     
     elb.deregister_instances_from_load_balancer(
-        LoadBalancerName='elb',
+        LoadBalancerName='[ELB NAME]',
         Instances=[
             {
-                'InstanceId': 'i-043fb34130a892840'
+                'InstanceId': 'i-######'
             },
         ]
     )

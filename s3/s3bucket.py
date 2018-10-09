@@ -1,6 +1,4 @@
-# script designed to utilize boto3 commands to create an s3 bucket
-# and push a simple web config to it
-# by reading a list of domains and piping each line into the "create bucket"
+# creates s3 buckets from a list and pushes a simple web config to them
 
 import boto3
 

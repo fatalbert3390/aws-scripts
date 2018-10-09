@@ -10,7 +10,7 @@ files.append()
 # deletes files specified in list from last command
 for file in files:
     s3.delete_objects(
-        Bucket = 'alex-stn-testing'
+        Bucket = '[BUCKET NAME]'
         Delete ={
             'Objects': [
                 {

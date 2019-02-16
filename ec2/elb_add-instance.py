@@ -1,4 +1,7 @@
-# adds an instance to the 'ELB' load balancer
+# Adds an instance to a load balancer
+# 
+# This script is intended to be run on a failed
+# load balancer health check/CW alarm
 
 import boto3
 

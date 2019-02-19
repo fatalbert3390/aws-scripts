@@ -15,5 +15,3 @@ acm.request_certificate(
 	'*.{}'.format(bucket),
     ],
 )
-
-testing

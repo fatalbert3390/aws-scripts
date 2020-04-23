@@ -14,4 +14,4 @@ for topic in result['Topics']:
 
 for topicArn in llist:
    client.delete_topic(TopicArn=topicArn)
-   print("Deleting Function: {}".format(name))
+   print("Deleting Function: {}".format(topicArn))

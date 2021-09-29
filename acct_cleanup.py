@@ -1,4 +1,4 @@
-# This script deletes a bunch of random ass stuff left over from a certain shitty SaaS product
+# This script was originally written to delete a bunch of random ass stuff left over from a certain shitty SaaS product named after a fish
 # This is the nuclear option - it deletes everything with prejudice, so be careful
 
 import boto3
